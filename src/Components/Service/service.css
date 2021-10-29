@@ -1,0 +1,15 @@
+.theme-btn{
+    color: #fff;
+    font-weight: 500;
+    background-color: cornflowerblue;
+}
+.theme-btn:hover{
+    color: rgb(207, 207, 207);
+    background-color: rgb(72, 126, 196);
+}
+.service{
+    transition: .5s ease-in-out;
+}
+.service:hover{
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+}

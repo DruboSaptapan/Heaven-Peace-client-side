@@ -1,0 +1,13 @@
+.footer{
+    color: #fff;
+    background-color: #3d5470;
+}
+.footer a{
+    color: #fff;
+}
+.service-list li, .important-list li{
+    list-style-type: none;
+}
+.service-list li:nth-child(1), .important-list li:nth-child(1){
+    font-weight: bold;
+}
