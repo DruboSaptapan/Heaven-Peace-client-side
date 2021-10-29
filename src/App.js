@@ -6,41 +6,39 @@ import Home from './Components/Home/Home';
 import Services from './Components/Services/Services';
 import NotFound from './Components/NotFound/NotFound';
 import Login from './Components/Login/Login';
-import Register from './Components/Register/Register'
+import AuthProvider from './Context/AuthProvider';
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Header></Header>
-        <Switch>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
+      <AuthProvider>
+        <Router>
+          <Header></Header>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
 
-          <Route path="/home">
-            <Home></Home>
-          </Route>
+            <Route path="/home">
+              <Home></Home>
+            </Route>
 
-          <Route path="/services">
-            <Services></Services>
-          </Route>
+            <Route path="/services">
+              <Services></Services>
+            </Route>
 
-          <Route path="/login">
-            <Login></Login>
-          </Route>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
 
-          <Route path="/register">
-            <Register></Register>
-          </Route>
+            <Route path="*">
+              <NotFound></NotFound>
+            </Route>
 
-          <Route path="*">
-            <NotFound></NotFound>
-          </Route>
-
-        </Switch>
-        <Footer></Footer>
-      </Router>
+          </Switch>
+          <Footer></Footer>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }
