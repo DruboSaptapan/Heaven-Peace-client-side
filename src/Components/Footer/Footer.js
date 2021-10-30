@@ -1,5 +1,7 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { IoLocationSharp } from "react-icons/io5";
+import { BsFillTelephoneFill } from "react-icons/bs";
+import { MdEmail } from "react-icons/md";
 
 import './Footer.css'
 
@@ -9,34 +11,37 @@ const Footer = () => {
             <div className="container mt-5 pt-5 pb-3">
                 <div>
                     <div className="row">
-                        <div className="col-12 col-lg-3 py-4">
-                            {/* <Link className="navbar-brand" to="/">
-                                <img src={logo} alt="" style={{ width: 40, fontWeight: 700, color: 'black', marginRight: 5 }} />
-                                Fetoscope
-                            </Link> */}
-                        </div>
                         <div className="col-6 col-lg-3">
                             <ul className="service-list">
-                                <li className="text-start">Services</li>
-                                <li className="text-start">Cardiology(Adult)</li>
-                                <li className="text-start">Dentistry</li>
-                                <li className="text-start">Pharmacy</li>
-                                <li className="text-start">Therapies</li>
-                            </ul>
-                        </div>
-                        <div className="col-6 col-lg-3">
-                            <ul className="important-list">
-                                <li className="text-start">Important Links</li>
+                                <li className="text-start">Quick Links</li>
                                 <li className="text-start">Home</li>
-                                <li className="text-start">Services</li>
-                                <li className="text-start">Contact Us</li>
+                                <li className="text-start">About us</li>
+                                <li className="text-start">Contact</li>
                             </ul>
                         </div>
                         <div className="col-6 col-lg-3">
                             <ul className="important-list">
-                                <li className="text-start">Support</li>
-                                <li className="text-start">Terms of services</li>
-                                <li className="text-start">Privacy policy</li>
+                                <li className="text-start">Other pages</li>
+                                <li className="text-start">My orders</li>
+                                <li className="text-start">Manage all orders</li>
+                                <li className="text-start">Add services</li>
+                            </ul>
+                        </div>
+                        <div className="col-6 col-lg-3">
+                            <ul className="important-list">
+                                <li className="text-start">Contact Info</li>
+                                <li className="text-start my-1"><IoLocationSharp className="me-1" style={{ color: '#ddc5c5' }} /> Level-4, 34, Awal Centre, Banani, Dhaka</li>
+                                <li className="text-start my-1"><BsFillTelephoneFill className="me-1" style={{ color: '#ddc5c5' }} />+8801322810867</li>
+                                <li className="text-start my-1"><MdEmail className="me-1" style={{ color: '#ddc5c5' }} />heaven.peace@gmail.com</li>
+                            </ul>
+                        </div>
+                        <div className="col-6 col-lg-3">
+                            <ul className="important-list">
+                                <li className="text-start mb-1">Make a reservation</li>
+                                <li className="text-start mt-1 mb-2" style={{lineHeight:1.09}}>Our team is always available 24/7 to answer your queries</li>
+                                <li className="text-start mt-1">
+                                    <button className="rounded-pill btn btn-success" type="tel">+8801322810867</button>
+                                </li>
                             </ul>
                         </div>
                     </div>
