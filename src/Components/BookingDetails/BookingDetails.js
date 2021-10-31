@@ -7,11 +7,12 @@ import { MdLuggage } from "react-icons/md";
 import demoImg from './amikhum.jpg'
 import { useForm } from 'react-hook-form';
 import useAuth from '../../Hooks/useAuth';
+import { useParams } from 'react-router'
 
 const BookingDetails = () => {
+    const {bookingId} = useParams();
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { user } = useAuth();
-    // console.log(user)
 
     const onSubmit = data => {
         fetch('https://enigmatic-ridge-54979.herokuapp.com/orders', {
@@ -31,6 +32,7 @@ const BookingDetails = () => {
     };
     return (
         <div>
+            <h2>{bookingId}</h2>
             <div className="container">
                 <div className="row mt-3">
                     <div className="col-lg-6 col-12">

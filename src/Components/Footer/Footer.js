@@ -7,7 +7,7 @@ import './Footer.css'
 
 const Footer = () => {
     return (
-        <div className="footer">
+        <div className="footer pb-5">
             <div className="container mt-5 pt-5 pb-3">
                 <div>
                     <div className="row">
@@ -45,7 +45,7 @@ const Footer = () => {
                             </ul>
                         </div>
                     </div>
-                    <p className="mt-5 mb-0 fw-bold pb-4">Copyright © 2021 | This website is made by Saptapan Barua</p>
+                    <p className="mt-5 mb-0 fw-bold pb-5">Copyright © 2021 | This website is made by Saptapan Barua</p>
                 </div>
             </div>
         </div>
