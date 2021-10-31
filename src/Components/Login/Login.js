@@ -25,11 +25,11 @@ const Login = () => {
 
     return (
         <div>
-            <div className="container bg-light rounded shadow-sm p-5 my-5 border border-3 w-50">
+            <div className="container-lg bg-light rounded shadow-sm p-lg-5 p-2 my-5 border border-3 w-50">
                 <h2 className="mb-4">Please Login</h2>
-                <button onClick={handleGoogleLogIn} className="btn rounded-pill mb-4 border"><FcGoogle/> Login with Google</button>
+                <button onClick={handleGoogleLogIn} className="btn rounded-pill mb-2 border"><FcGoogle/> Login with Google</button>
                 <br />
-                <button onClick={handleGithubLogIn} className="btn btn-dark rounded-pill"><FaGithub/> Login with Github</button>
+                <button onClick={handleGithubLogIn} className="btn btn-dark mt-2 rounded-pill"><FaGithub/> Login with Github</button>
             </div>
         </div>
     );

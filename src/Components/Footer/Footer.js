@@ -12,7 +12,7 @@ const Footer = () => {
                 <div>
                     <div className="row">
                         <div className="col-6 col-lg-3">
-                            <ul className="service-list">
+                            <ul className="important-list p-0 px-lg-4">
                                 <li className="text-start">Quick Links</li>
                                 <li className="text-start">Home</li>
                                 <li className="text-start">About us</li>
@@ -20,7 +20,7 @@ const Footer = () => {
                             </ul>
                         </div>
                         <div className="col-6 col-lg-3">
-                            <ul className="important-list">
+                            <ul className="important-list p-0 px-lg-4">
                                 <li className="text-start">Other pages</li>
                                 <li className="text-start">My orders</li>
                                 <li className="text-start">Manage all orders</li>
@@ -28,7 +28,7 @@ const Footer = () => {
                             </ul>
                         </div>
                         <div className="col-6 col-lg-3">
-                            <ul className="important-list">
+                            <ul className="important-list p-0 px-lg-4">
                                 <li className="text-start">Contact Info</li>
                                 <li className="text-start my-1"><IoLocationSharp className="me-1" style={{ color: '#ddc5c5' }} /> Level-4, 34, Awal Centre, Banani, Dhaka</li>
                                 <li className="text-start my-1"><BsFillTelephoneFill className="me-1" style={{ color: '#ddc5c5' }} />+8801322810867</li>
@@ -36,9 +36,9 @@ const Footer = () => {
                             </ul>
                         </div>
                         <div className="col-6 col-lg-3">
-                            <ul className="important-list">
+                            <ul className="important-list p-0 px-lg-4">
                                 <li className="text-start mb-1">Make a reservation</li>
-                                <li className="text-start mt-1 mb-2" style={{lineHeight:1.09}}>Our team is always available 24/7 to answer your queries</li>
+                                <li className="text-start mt-1 mb-2" style={{lineHeight:1.6}}>Our team is always available 24/7 to answer your queries</li>
                                 <li className="text-start mt-1">
                                     <button className="rounded-pill btn btn-success" type="tel">+8801322810867</button>
                                 </li>
