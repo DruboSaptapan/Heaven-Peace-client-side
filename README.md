@@ -8,7 +8,7 @@ This is live site link of (Firebase):  [HEAVEN PEACE Website](https://heaven-pea
     <li>You can see their wonderful services.</li>
     <li>You can easily login and get a wonderful package</li>
     <li>You can see for the best world scenery</li>
-    <li>Enjoy you holiday journey for purchase a tour package.</li>
+    <li>Enjoy your holiday journey for purchase a tour package.</li>
 </ul>
 
-Thanks for watching visit my wonderful website.
+Thanks for watching visit my website.

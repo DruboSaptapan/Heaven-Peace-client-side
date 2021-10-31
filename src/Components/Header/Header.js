@@ -8,7 +8,7 @@ const Header = () => {
 
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-lg" style={{ height: 80 }}>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-lg">
                 <div className="container">
                     <NavLink className="navbar-brand" to="/">Heaven Peace</NavLink>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
