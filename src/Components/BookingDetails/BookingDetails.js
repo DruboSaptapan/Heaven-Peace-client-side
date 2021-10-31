@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { BsCurrencyDollar } from "react-icons/bs";
 import { FaHeadphones } from "react-icons/fa";
 import { BsFillStarFill } from "react-icons/bs";
 import { MdLuggage } from "react-icons/md";
 
-import demoImg from './amikhum.jpg'
+// import demoImg from './amikhum.jpg'
 import { useForm } from 'react-hook-form';
 import useAuth from '../../Hooks/useAuth';
 import { useParams } from 'react-router'
@@ -13,6 +13,17 @@ const BookingDetails = () => {
     const {bookingId} = useParams();
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { user } = useAuth();
+
+    const { serviceId } = useParams();
+    const [service, setService] = useState([])
+
+    useEffect(() => {
+        fetch('https://enigmatic-ridge-54979.herokuapp.com/packages')
+            .then(res => res.json())
+            .then(data => setService(data))
+    }, [])
+
+    const packageInfo = service.find(Package => Package._id === serviceId);
 
     const onSubmit = data => {
         fetch('https://enigmatic-ridge-54979.herokuapp.com/orders', {
@@ -36,7 +47,7 @@ const BookingDetails = () => {
             <div className="container">
                 <div className="row mt-3">
                     <div className="col-lg-6 col-12">
-                        <img src={demoImg} className="img-fluid" alt="" />
+                        <img src={packageInfo?.img} className="img-fluid" alt="" />
                         <h3 className="text-start mt-3 mb-lg-0 mb-3">Amiakhum</h3>
                         <div className="row row-cols-3">
                             <div className="col">Column</div>
@@ -60,7 +71,7 @@ const BookingDetails = () => {
                                 <label htmlFor="floatingInput">Email Address</label>
                             </div>
                             <div className="form-floating mb-3">
-                                <input type="text" className="form-control" id="floatingInput" placeholder="Service title" {...register("title")} />
+                                <input type="text" className="form-control" id="floatingInput" placeholder="Service title" defaultValue={packageInfo?.name} {...register("title")} />
                                 <label htmlFor="floatingInput">Service Title</label>
                             </div>
                             <div className="form-floating mb-3">

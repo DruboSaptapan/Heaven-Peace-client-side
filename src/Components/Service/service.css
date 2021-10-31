@@ -1,11 +1,10 @@
-.theme-btn{
+.btn-theme{
+    background-color: #f6942c;
     color: #fff;
     font-weight: 500;
-    background-color: cornflowerblue;
 }
-.theme-btn:hover{
-    color: rgb(207, 207, 207);
-    background-color: rgb(72, 126, 196);
+.btn-theme:hover{
+    color: #fff;
 }
 .service{
     transition: .5s ease-in-out;

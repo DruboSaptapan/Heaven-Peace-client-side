@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
+import logoImg from './image/logo.png'
 
 
 const Header = () => {
@@ -10,7 +11,9 @@ const Header = () => {
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-lg">
                 <div className="container">
-                    <NavLink className="navbar-brand" to="/">Heaven Peace</NavLink>
+                    <NavLink className="navbar-brand" to="/">
+                        <img src={logoImg} alt="" width="130" />
+                    </NavLink>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
