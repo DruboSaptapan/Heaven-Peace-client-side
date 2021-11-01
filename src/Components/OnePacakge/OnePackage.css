@@ -1,9 +1,10 @@
 .btn-theme{
-    background-color: #f6942c;
+    background-color: #1c395e;
     color: #fff;
     font-weight: 500;
 }
 .btn-theme:hover{
+    background-color: #f6942c;
     color: #fff;
 }
 .package{
