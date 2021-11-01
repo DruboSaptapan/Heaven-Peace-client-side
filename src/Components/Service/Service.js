@@ -8,7 +8,7 @@ const Service = ({ service }) => {
   return (
     <div className="col">
       <div className="card h-100 me-0 service-card d-flex flex-column align-items-start service">
-        <img src={img} className="card-img-top" alt="" />
+        <img src={img} className="card-img-top img-fluid" alt="" />
         <div className="card-body p-3">
           <div className="row my-2 border-bottom">
             <div className="col-8">
@@ -23,7 +23,7 @@ const Service = ({ service }) => {
             <div className="col-lg-6"></div>
             <div className="col-lg-6">
               <Link to={`/bookingDetails/${_id}`}>
-                <button className="btn btn-theme rounded-pill" service={service}>See more info</button>
+                <button className="btn btn-theme rounded-pill" service={service}>Booking</button>
               </Link>
             </div>
           </div>

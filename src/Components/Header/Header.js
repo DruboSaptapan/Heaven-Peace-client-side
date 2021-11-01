@@ -23,17 +23,27 @@ const Header = () => {
                                 <NavLink className="nav-link me-1" aria-current="page" to="/">Home</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link me-1" aria-current="page" to="/services">Service</NavLink>
+                                <NavLink className="nav-link me-1" aria-current="page" to="/packages">Package</NavLink>
                             </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link mx-1" to="/myorders">My Orders</NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link mx-1" to="/manageorders">Manage All Orders</NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link ms-1" to="/addpackages">Add Packages</NavLink>
-                            </li>
+                            {
+                                ((user.displayName) || (user.photoURL) || (user.email)) &&
+                                <li className="nav-item">
+                                    <NavLink className="nav-link mx-1" to="/myorders">My Orders</NavLink>
+                                </li>
+                            }
+                            {
+                                ((user.displayName) || (user.photoURL) || (user.email)) &&
+                                <li className="nav-item">
+                                    <NavLink className="nav-link mx-1" to="/manageorders">Manage All Orders</NavLink>
+                                </li>
+                            }
+                            {
+                                ((user.displayName) || (user.photoURL) || (user.email)) &&
+                                <li className="nav-item">
+                                    <NavLink className="nav-link ms-1" to="/addpackages">Add Packages</NavLink>
+                                </li>
+                            }
+
                         </ul>
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li className="nav-item">

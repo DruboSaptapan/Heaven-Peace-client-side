@@ -1,29 +1,20 @@
-import React, { useEffect, useState } from 'react'
-import { BsCurrencyDollar } from "react-icons/bs";
-import { FaHeadphones } from "react-icons/fa";
-import { BsFillStarFill } from "react-icons/bs";
-import { MdLuggage } from "react-icons/md";
-
-// import demoImg from './amikhum.jpg'
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useParams } from 'react-router';
 import useAuth from '../../Hooks/useAuth';
-import { useParams } from 'react-router'
 
-const BookingDetails = () => {
-    const {bookingId} = useParams();
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+
+const Booking = () => {
+    const { bookingId } = useParams();
+    const [singlePackage, setSinglePackage] = useState({});
+    const { register, handleSubmit, reset } = useForm();
     const { user } = useAuth();
 
-    const { serviceId } = useParams();
-    const [service, setService] = useState([])
-
     useEffect(() => {
-        fetch('https://enigmatic-ridge-54979.herokuapp.com/packages')
+        fetch(`https://enigmatic-ridge-54979.herokuapp.com/packages/${bookingId}`)
             .then(res => res.json())
-            .then(data => setService(data))
+            .then(data => setSinglePackage(data))
     }, [])
-
-    const packageInfo = service.find(Package => Package._id === serviceId);
 
     const onSubmit = data => {
         fetch('https://enigmatic-ridge-54979.herokuapp.com/orders', {
@@ -41,62 +32,54 @@ const BookingDetails = () => {
                 }
             })
     };
-    return (
-        <div>
-            <h2>{bookingId}</h2>
-            <div className="container">
-                <div className="row mt-3">
-                    <div className="col-lg-6 col-12">
-                        <img src={packageInfo?.img} className="img-fluid" alt="" />
-                        <h3 className="text-start mt-3 mb-lg-0 mb-3">Amiakhum</h3>
-                        <div className="row row-cols-3">
-                            <div className="col">Column</div>
-                            <div className="col">Column</div>
-                            <div className="col">Column</div>
-                            <div className="col">Column</div>
-                            <div className="col">Column</div>
-                            <div className="col">Column</div>
-                        </div>
-                    </div>
-                    <div className="col-lg-6 col-12">
-                        <h2 className="text-center mb-4 mt-lg-0 mt-4">Registration service</h2>
-                        <form className="w-100 mb-5" onSubmit={handleSubmit(onSubmit)}>
-                            <div className="form-floating mb-3">
-                                <input type="text" className="form-control" id="floatingInput" placeholder="Your name" defaultValue={user.displayName} {...register("name")} required />
-                                <label htmlFor="floatingInput">Name</label>
-                            </div>
-                            <div className="form-floating mb-3">
-                                <input type="email" className="form-control" id="floatingInput" placeholder="Your email address" defaultValue={user.email} {...register("email", { required: true })} required />
-                                {errors.email && <span className="error">This field is required</span>}
-                                <label htmlFor="floatingInput">Email Address</label>
-                            </div>
-                            <div className="form-floating mb-3">
-                                <input type="text" className="form-control" id="floatingInput" placeholder="Service title" defaultValue={packageInfo?.name} {...register("title")} />
-                                <label htmlFor="floatingInput">Service Title</label>
-                            </div>
-                            <div className="form-floating mb-3">
-                                <input type="number" className="form-control" id="floatingInput" placeholder="price" defaultValue={user.price} {...register("price")} />
-                                <label htmlFor="floatingInput">Price</label>
-                            </div>
-                            <div className="form-floating">
-                                <textarea className="form-control" id="floatingTextarea2" placeholder="Address" defaultValue="" {...register("address")}  style={{height: 100}}></textarea>
-                                <label htmlFor="floatingTextarea2">Address</label>
-                            </div>
-                            <input type="submit" className="btn btn-success mt-2"/>
-                        </form>
 
-                        <h2 className="mb-4">Why book with us</h2>
-                        <ul className="list-group list-group-flush">
-                            <li className="list-group-item text-start"><BsCurrencyDollar style={{ color: '#34547a', marginRight: 14, width: 20, height:20 }} /> No hassle-best price guaranty</li>
-                            <li className="list-group-item text-start"><FaHeadphones style={{ color: '#34547a', marginRight: 14, width: 20, height:20 }} /> Customer care 24/7</li>
-                            <li className="list-group-item text-start"><BsFillStarFill style={{ color: '#34547a', marginRight: 14, width: 20, height:20 }} /> Hand picked tour & Activities</li>
-                            <li className="list-group-item text-start"><MdLuggage style={{ color: '#34547a', marginRight: 14, width: 20, height:20 }} /> Free travel insurance</li>
-                        </ul>
+    return (
+
+        <div>
+            <div className="container">
+                <div className="row mt-4">
+                    <div className="col-lg-6">
+                        <img src={singlePackage?.img} alt="" className="img-fluid"/>
+                    </div>
+                    <div className="col-lg-6">
+                        <div className="shadow-lg">
+                            <h3 className="text-center mt-5 pt-5 pb-3 theme-color">Please, Order your favorite package</h3>
+                            <h3 className="text-center mt-5 pt-5 pb-3 theme-color">title: {singlePackage.title}</h3>
+                            <div className="text-start px-5">
+                                <form onSubmit={handleSubmit(onSubmit)} className="px-4 pb-5">
+                                    <div className="mb-3">
+                                        <label for="exampleFormControlInput1" className="form-label">User Name</label>
+                                        <input type="text" className="form-control" id="exampleFormControlInput1" defaultValue={user.displayName} {...register("name", { required: true })} />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label for="exampleFormControlInput1" className="form-label">User Email</label>
+                                        <input type="email" className="form-control" id="exampleFormControlInput1" defaultValue={user.email} {...register("email", { required: true })} />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label for="exampleFormControlInput1" className="form-label">Package Title</label>
+                                        <input type="text" className="form-control" id="exampleFormControlInput1" defaultValue={singlePackage.name} {...register("title", { required: true })} placeholder="Package title" required />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label for="exampleFormControlInput1" className="form-label">Package Price</label>
+                                        <input type="number" className="form-control" id="exampleFormControlInput1" defaultValue={singlePackage.price} {...register("price", { required: true })} placeholder="$ price" />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label for="exampleFormControlInput1" className="form-label">User Address</label>
+                                        <input type="text" className="form-control" id="exampleFormControlInput1" defaultValue="" {...register("address", { required: true })} placeholder="User address" />
+                                    </div>
+
+                                    <span className="w-50 mx-auto" style={{ display: "block" }}>
+                                        <input type="submit" className="btn theme-btn w-100 text-center " />
+                                    </span>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
     );
 };
 
-export default BookingDetails;
+export default Booking;

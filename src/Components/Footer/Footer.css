@@ -1,6 +1,6 @@
 .footer{
     color: #fff;
-    background-color: #34547a;
+    background-color: #1c395e;
 }
 .footer a{
     color: #fff;
@@ -10,4 +10,8 @@
 }
 .service-list li:nth-child(1), .important-list li:nth-child(1){
     font-weight: bold;
+}
+.btn-footer{
+    color: #fff;
+    background-color: #dc3545;
 }

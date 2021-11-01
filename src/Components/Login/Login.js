@@ -7,7 +7,7 @@ import { FaGithub } from "react-icons/fa";
 const Login = () => {
     const { signInUsingGoogle, signInUsingGithub } = useAuth();
     const location = useLocation();
-    const history = useHistory()
+    const history = useHistory();
     const redirectURL = location.state?.from || '/';
 
     const handleGoogleLogIn = () => {
@@ -27,9 +27,9 @@ const Login = () => {
         <div>
             <div className="container-lg bg-light rounded shadow-sm p-lg-5 p-2 my-5 border border-3 w-50">
                 <h2 className="mb-4">Please Login</h2>
-                <button onClick={handleGoogleLogIn} className="btn rounded-pill mb-2 border"><FcGoogle/> Login with Google</button>
+                <button onClick={handleGoogleLogIn} className="btn rounded-pill mb-2 border"><FcGoogle /> Login with Google</button>
                 <br />
-                <button onClick={handleGithubLogIn} className="btn btn-dark mt-2 rounded-pill"><FaGithub/> Login with Github</button>
+                <button onClick={handleGithubLogIn} className="btn btn-dark mt-2 rounded-pill"><FaGithub /> Login with Github</button>
             </div>
         </div>
     );

@@ -9,6 +9,10 @@ const ManageOrders = () => {
             .then(data => setServices(data))
     }, [])
 
+    const handleApprove = id => {
+        
+    }
+
     // DELETE ORDER
     const handleCancelOrder = id => {
         const url = `https://enigmatic-ridge-54979.herokuapp.com/orders/${id}`;
@@ -18,7 +22,7 @@ const ManageOrders = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.deletedCount) {
-                    alert('Deleted')
+                    alert('Successfully deleted')
                     const remaining = orders.filter(order => order._id !== id);
                     setServices(remaining);
                 }
@@ -52,15 +56,14 @@ const ManageOrders = () => {
                                     <td className="text-start">{order.title}</td>
                                     <td className="text-start">{order.price}</td>
                                     <td className="text-start">
-                                        <button className="btn btn-sm btn-success">Approve</button>
+                                        {
+                                            orders.status
+                                        }
+                                        <span class="badge bg-danger" id="pending">Pending</span>
                                     </td>
-                                    {
-                                        order.status === 'Pending' ? 
-                                        <td className="text-danger fw-bold">
-                                            {order.status}</td> :<td className="text-success fw-bold">{order.status}</td>
-                                    }
                                     <td>
-                                        <button onClick={() => handleCancelOrder(order._id)} className="btn btn-sm btn-danger">Cancel</button>
+                                        <button onClick={() => handleApprove(order._id)} className="btn btn-sm btn-success me-1">Approve</button>
+                                        <button onClick={() => handleCancelOrder(order._id)} className="btn btn-sm btn-danger ms-1">Cancel</button>
                                     </td>
                                 </tr>
                             )

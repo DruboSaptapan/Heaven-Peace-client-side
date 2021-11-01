@@ -40,12 +40,12 @@ const Footer = () => {
                                 <li className="text-start mb-1">Make a reservation</li>
                                 <li className="text-start mt-1 mb-2" style={{lineHeight:1.6}}>Our team is always available 24/7 to answer your queries</li>
                                 <li className="text-start mt-1">
-                                    <button className="rounded-pill btn btn-success" type="tel">+8801322810867</button>
+                                    <button className="rounded-pill btn btn-footer" type="tel">+8801322810867</button>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <p className="mt-5 mb-0 fw-bold pb-5">Copyright © 2021 | This website is made by Saptapan Barua</p>
+                    <p className="mt-5 mb-0 fw-bold pb-3">Copyright © 2021 | This website is made by Saptapan Barua</p>
                 </div>
             </div>
         </div>

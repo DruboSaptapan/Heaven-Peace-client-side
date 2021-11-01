@@ -3,7 +3,7 @@ import './App.css';
 import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
-import Services from './Components/Services/Services';
+import Packages from './Components/Services/Services';
 import NotFound from './Components/NotFound/NotFound';
 import Login from './Components/Login/Login';
 import AuthProvider from './Context/AuthProvider';
@@ -28,13 +28,13 @@ function App() {
               <Home></Home>
             </Route>
 
-            <Route path="/services">
-              <Services></Services>
+            <Route path="/packages">
+              <Packages></Packages>
             </Route>
 
-            <Route path="/myorders">
+            <PrivateRoute path="/myorders">
               <MyOrders></MyOrders>
-            </Route>
+            </PrivateRoute>
 
             <PrivateRoute path="/manageorders">
               <ManageOrders></ManageOrders>
@@ -44,9 +44,9 @@ function App() {
               <AddPackages></AddPackages>
             </PrivateRoute>
 
-            <Route path="/bookingDetails/:bookingId">
+            <PrivateRoute path="/bookingDetails/:bookingId">
               <BookingDetails></BookingDetails>
-            </Route>
+            </PrivateRoute>
 
             <Route path="/login">
               <Login></Login>
