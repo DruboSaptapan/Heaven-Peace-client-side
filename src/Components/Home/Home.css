@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
 .banner{
     background-image: linear-gradient(to left, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2)), url(./images/1.jpg);
     height: 100vh;
@@ -8,8 +9,8 @@
     padding: 200px 0;
 }
 .banner h1{
-    color: lightgrey;
-}
-.banner p{
-    color: white;
+    color: #fff;
+    font-size: 3.2rem;
+    background-color: rgba(46, 46, 46, 0.25);
+    font-family: 'Berkshire Swash', cursive;
 }

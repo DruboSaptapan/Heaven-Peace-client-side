@@ -49,7 +49,7 @@ const Header = () => {
                             <li className="nav-item">
                                 {
                                     ((user?.displayName) || (user?.photoURL) || (user?.email)) &&
-                                    <div className="user-box rounded-pill mx-lg-0 mx-auto py-1 px-2 d-flex align-items-center">
+                                    <div className="rounded-pill mx-lg-0 mx-auto py-1 px-2 d-flex align-items-center justify-content-center my-3 my-lg-0">
                                         <img src={user?.photoURL} className="rounded-pill user" alt="" style={{ width: 35 }} />
                                         <p className="ms-2 mb-2 fw-bold">{(user?.displayName) || (user?.email)}</p>
                                     </div>

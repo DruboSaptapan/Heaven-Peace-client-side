@@ -3,7 +3,7 @@ import './App.css';
 import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
-import Packages from './Components/Services/Services';
+import Packages from './Components/Packages/Packages';
 import NotFound from './Components/NotFound/NotFound';
 import Login from './Components/Login/Login';
 import AuthProvider from './Context/AuthProvider';

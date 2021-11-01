@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import Service from '../Service/Service';
+import useAuth from '../../Hooks/useAuth';
+import OnePackage from '../OnePacakge/OnePackage';
 
 const Packages = () => {
     const [packages, setPackages] = useState([])
@@ -9,13 +10,23 @@ const Packages = () => {
             .then(res => res.json())
             .then(data => setPackages(data))
     }, [])
+    const { isLoading } = useAuth();
+    if (isLoading) {
+        return (
+            <div className="d-flex justify-content-center align-items-start package-loader">
+                <div className="d-flex justify-content-center spinner-border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        )
+    }
     return (
         <div>
             <div className="container my-5">
                 <h2 className="mb-4">Packages</h2>
                 <div className="row row-cols-1 row-cols-md-3 g-4">
                     {
-                        packages.map(service => <Service key={service._id} service={service}></Service>)
+                        packages.map(onePackage => <OnePackage key={onePackage._id} onePackage={onePackage}></OnePackage>)
                     }
                 </div>
             </div>

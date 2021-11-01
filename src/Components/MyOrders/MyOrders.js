@@ -5,18 +5,19 @@ import useAuth from '../../Hooks/useAuth';
 const MyOrders = () => {
     const [myOrders, setMyOrders] = useState([]);
     const { user } = useAuth();
+    console.log(myOrders)
 
-    const email = user.email
-    console.log(email);
+    const email = user.email;
 
     useEffect(() => {
         axios.post("https://enigmatic-ridge-54979.herokuapp.com/orders/email", { email: `${email}` })
             .then(res => setMyOrders(res.data));
     }, [])
 
-    /* for cancelling order */
+
+    // CANCEL ORDER
     const handleCancelOrder = id => {
-        const proceed = window.confirm("Really do you want to delete it?");
+        const proceed = window.confirm("Are you sure, you want to delete it?");
         if (proceed) {
             const url = `https://enigmatic-ridge-54979.herokuapp.com/orders/${id}`;
             fetch(url, {
@@ -26,13 +27,14 @@ const MyOrders = () => {
                 .then(data => {
                     console.log(data);
                     if (data.deletedCount) {
-                        alert('Successfully deleted')
+                        alert('Deleted Successfully')
                         const remainingOrder = myOrders.filter(order => order._id !== id);
                         setMyOrders(remainingOrder);
                     }
                 })
         }
     }
+
     return (
         <div className="container">
             <h2 className="mt-5 mb-3 text-center">My Orders</h2>
@@ -61,7 +63,7 @@ const MyOrders = () => {
                                 <td className="text-start">{MyOrder?.title}</td>
                                 <td className="text-start">{MyOrder?.price}</td>
                                 <td className="text-start">
-                                    <button className="btn btn-sm btn-success">Approve</button>
+                                    <span class="badge bg-danger" id="pending">Pending</span>
                                 </td>
                                 {
                                     MyOrder.status === 'Pending' ? <td className="text-danger fw-bold">{MyOrder.status}</td> : <td className="text-success fw-bold">{MyOrder.status}</td>
