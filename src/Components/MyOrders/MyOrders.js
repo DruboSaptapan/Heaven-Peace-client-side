@@ -5,7 +5,6 @@ import useAuth from '../../Hooks/useAuth';
 const MyOrders = () => {
     const [myOrders, setMyOrders] = useState([]);
     const { user } = useAuth();
-    console.log(myOrders)
 
     const email = user.email;
 
@@ -25,7 +24,6 @@ const MyOrders = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
                     if (data.deletedCount) {
                         alert('Deleted Successfully')
                         const remainingOrder = myOrders.filter(order => order._id !== id);
@@ -63,11 +61,11 @@ const MyOrders = () => {
                                 <td className="text-start">{MyOrder?.title}</td>
                                 <td className="text-start">{MyOrder?.price}</td>
                                 <td className="text-start">
-                                    <span class="badge bg-danger" id="pending">Pending</span>
+                                    <span className="badge bg-danger" id="pending">Pending</span>
+                                    {/* {
+                                        MyOrder.status === 'Pending' ? <td className="text-danger fw-bold">{MyOrder.status}</td> : <td className="text-success fw-bold">{MyOrder.status}</td>
+                                    } */}
                                 </td>
-                                {
-                                    MyOrder.status === 'Pending' ? <td className="text-danger fw-bold">{MyOrder.status}</td> : <td className="text-success fw-bold">{MyOrder.status}</td>
-                                }
                                 <td>
                                     <button onClick={() => handleCancelOrder(MyOrder._id)} className="btn btn-sm btn-danger">Cancel</button>
                                 </td>

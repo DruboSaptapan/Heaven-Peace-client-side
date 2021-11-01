@@ -17,25 +17,25 @@ const FAQ = () => {
                                     <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Can I get a expert tourist guide?</button>
                                 </h2>
                                 <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div className="accordion-body text-start">It can be daunting to visit a doctor for symptoms of what might be an undiagnosed medical problem. Patients often struggle to adequately explain their symptoms during the brief medical interview, which is an important component of helping the physician</div>
+                                    <div className="accordion-body text-start">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum eligendi totam quos unde, iste quis non deleniti accusantium saepe consectetur id dolore odio libero autem officiis aut itaque nemo ratione!</div>
                                 </div>
                             </div>
 
                             <div className="accordion-item">
                                 <h2 className="accordion-header" id="headingTwo">
-                                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">How do explain a problem to a doctor?</button>
+                                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">If i get in sick i get a doctor here?</button>
                                 </h2>
                                 <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                    <div className="accordion-body text-start">Home visit doctors are not some of the latest innovations. They have prevailed long before. And old fashion is coming back due to many reasons. We bring the quickest, most reliable medical service solution to every area in Dhaka. We have a major number of doctors in every part of Dhaka city ready to offer medical care at your home.</div>
+                                    <div className="accordion-body text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit distinctio consequuntur alias explicabo. Voluptatum laborum eaque assumenda molestias, accusantium tenetur maiores totam, vero quam vitae alias, reiciendis eos omnis et?</div>
                                 </div>
                             </div>
 
                             <div className="accordion-item">
                                 <h2 className="accordion-header" id="headingThree">
-                                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">How do I get doctor in trouble?</button>
+                                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">How is the method payment method?</button>
                                 </h2>
                                 <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div className="accordion-body text-start">It can be daunting to visit a doctor for symptoms of what might be an undiagnosed medical problem. Patients often struggle to adequately explain their symptoms during the brief medical interview, which is an important component of helping the physician</div>
+                                    <div className="accordion-body text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum expedita cumque, totam vel quam unde molestias repellat assumenda autem! Quos ullam impedit ducimus doloribus nulla animi ea quisquam, sunt qui!</div>
                                 </div>
                             </div>
                         </div>

@@ -45,8 +45,8 @@ const Booking = () => {
                     </div>
                     <div className="col-lg-6">
                         <div className="shadow-lg">
-                            <h3 className="text-center pt-5 pb-3 theme-color">Please, Order your favorite package</h3>
-                            <div className="text-start px-5">
+                            <h3 className="text-center pt-5 pb-3 theme-color">Order your favorite package which you want</h3>
+                            <div className="text-start px-0 px-lg-5">
                                 <form onSubmit={handleSubmit(onSubmit)} className="px-4 pb-5">
                                     <div className="mb-3">
                                         <label htmlFor="exampleFormControlInput1" className="form-label">User Name</label>

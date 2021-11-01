@@ -59,7 +59,7 @@ const ManageOrders = () => {
                                         {
                                             orders.status
                                         }
-                                        <span class="badge bg-danger" id="pending">Pending</span>
+                                        <span className="badge bg-danger" id="pending">Pending</span>
                                     </td>
                                     <td>
                                         <button onClick={() => handleApprove(order._id)} className="btn btn-sm btn-success me-1">Approve</button>

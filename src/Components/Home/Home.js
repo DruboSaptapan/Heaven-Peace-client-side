@@ -2,7 +2,6 @@ import React from 'react';
 import FAQ from '../FAQ/FAQ';
 import Services from '../Packages/Packages';
 
-
 import './Home.css'
 
 const Home = () => {
