@@ -21,11 +21,11 @@ const Service = ({ onePackage }) => {
           <p className="card-text text-start">{description}</p>
           <div className="row">
             <div className="col-lg-6 d-flex justify-content-start">
-            <i className="fas fa-star" style={{color: '#FFD700', fontSize: 30}}></i>
-            <i className="fas fa-star" style={{color: '#FFD700', fontSize: 30}}></i>
-            <i className="fas fa-star" style={{color: '#FFD700', fontSize: 30}}></i>
-            <i className="fas fa-star" style={{color: '#FFD700', fontSize: 30}}></i>
-            <i className="fas fa-star" style={{color: '#FFD700', fontSize: 30}}></i>
+            <i className="fas fa-star" style={{color: '#ffc125', fontSize: 30}}></i>
+            <i className="fas fa-star" style={{color: '#ffc125', fontSize: 30}}></i>
+            <i className="fas fa-star" style={{color: '#ffc125', fontSize: 30}}></i>
+            <i className="fas fa-star" style={{color: '#ffc125', fontSize: 30}}></i>
+            <i className="fas fa-star" style={{color: '#ffc125', fontSize: 30}}></i>
             </div>
             <div className="col-lg-6 d-flex justify-content-end">
               <Link to={`/bookingDetails/${_id}`}>

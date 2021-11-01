@@ -25,7 +25,7 @@ const Login = () => {
 
     return (
         <div>
-            <div className="container-lg bg-light rounded shadow-sm p-lg-5 p-2 my-5 border border-3 w-50">
+            <div className="container-lg bg-light rounded shadow-sm p-lg-5 py-3 my-5 border border-3 w-50">
                 <h2 className="mb-4">Please Login</h2>
                 <button onClick={handleGoogleLogIn} className="btn rounded-pill mb-2 border"><FcGoogle /> Login with Google</button>
                 <br />
