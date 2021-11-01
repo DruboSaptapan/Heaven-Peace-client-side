@@ -16,12 +16,12 @@ const Login = () => {
                 history.push(redirectURL)
             })
     }
-    const handleGithubLogIn = () => {
-        signInUsingGithub()
-            .then(result => {
-                history.push(redirectURL)
-            })
-    }
+    // const handleGithubLogIn = () => {
+    //     signInUsingGithub()
+    //         .then(result => {
+    //             history.push(redirectURL)
+    //         })
+    // }
 
     return (
         <div>
@@ -29,7 +29,7 @@ const Login = () => {
                 <h2 className="mb-4">Please Login</h2>
                 <button onClick={handleGoogleLogIn} className="btn rounded-pill mb-2 border"><FcGoogle /> Login with Google</button>
                 <br />
-                <button onClick={handleGithubLogIn} className="btn btn-dark mt-2 rounded-pill"><FaGithub /> Login with Github</button>
+                {/* <button onClick={handleGithubLogIn} className="btn btn-dark mt-2 rounded-pill"><FaGithub /> Login with Github</button> */}
             </div>
         </div>
     );
