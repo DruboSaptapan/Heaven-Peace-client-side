@@ -6,7 +6,9 @@ import logoImg from './image/logo.png'
 
 const Header = () => {
     const { user, logOut } = useAuth();
-
+    const activeStyle = {
+        color : '#f68712', fontWeight : 'bold',
+    }
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-lg">
@@ -20,30 +22,29 @@ const Header = () => {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <NavLink className="nav-link me-1" aria-current="page" to="/">Home</NavLink>
+                                <NavLink className="nav-link me-1" aria-current="page" to="/home" activeStyle={activeStyle}>Home</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link me-1" aria-current="page" to="/packages">Package</NavLink>
+                                <NavLink className="nav-link me-1" aria-current="page" to="/packages" activeStyle={activeStyle}>Package</NavLink>
                             </li>
                             {
                                 ((user.displayName) || (user.photoURL) || (user.email)) &&
                                 <li className="nav-item">
-                                    <NavLink className="nav-link mx-1" to="/myorders">My Orders</NavLink>
+                                    <NavLink className="nav-link mx-1" to="/myorders" activeStyle={activeStyle}>My Orders</NavLink>
                                 </li>
                             }
                             {
                                 ((user.displayName) || (user.photoURL) || (user.email)) &&
                                 <li className="nav-item">
-                                    <NavLink className="nav-link mx-1" to="/manageorders">Manage All Orders</NavLink>
+                                    <NavLink className="nav-link mx-1" to="/manageorders" activeStyle={activeStyle}>Manage All Orders</NavLink>
                                 </li>
                             }
                             {
                                 ((user.displayName) || (user.photoURL) || (user.email)) &&
                                 <li className="nav-item">
-                                    <NavLink className="nav-link ms-1" to="/addpackages">Add Packages</NavLink>
+                                    <NavLink className="nav-link ms-1" to="/addpackages" activeStyle={activeStyle}>Add Packages</NavLink>
                                 </li>
                             }
-
                         </ul>
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li className="nav-item">
